@@ -17,4 +17,10 @@ public class Lv1Solution {
         int answer = num1 / num2;
         return answer;
     }
+
+    // 4. 나이 출력
+    public int solution4(int age) {
+        int answer = 2022 - age + 1;
+        return answer;
+    }
 }
