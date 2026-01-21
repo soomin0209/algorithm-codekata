@@ -58,13 +58,24 @@ public class Lv1Solution {
     }
 
     // 9. 짝수의 합
-    public int solution(int n) {
+    public int solution9(int n) {
         int answer = 0;
         for (int i = 0; i <= n; i++) {
             if (i % 2 == 0) {
                 answer += i;
             }
         }
+        return answer;
+    }
+
+    // 10. 배열의 평균값
+    public double solution10(int[] numbers) {
+        double answer = 0;
+        int sum = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            sum += numbers[i];
+        }
+        answer = (double)sum / numbers.length;
         return answer;
     }
 }
