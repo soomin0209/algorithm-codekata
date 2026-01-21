@@ -35,4 +35,10 @@ public class Lv1Solution {
         int answer = num1 + num2;
         return answer;
     }
+
+    // 7. 두 수의 나눗셈
+    public int solution7(int num1, int num2) {
+        int answer = (int)(((double)num1 / (double)num2) * 1000);
+        return answer;
+    }
 }
