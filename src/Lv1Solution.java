@@ -78,4 +78,15 @@ public class Lv1Solution {
         answer = (double)sum / numbers.length;
         return answer;
     }
+
+    // 11. 짝수와 홀수
+    public String solution11(int num) {
+        String answer;
+        if (num % 2 == 0) {
+            answer = "Even";
+        } else {
+            answer = "Odd";
+        }
+        return answer;
+    }
 }
