@@ -109,4 +109,15 @@ public class Lv1Solution {
         }
         return answer;
     }
+
+    // 14. 약수의 합
+    public int solution14(int n) {
+        int answer = 0;
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                answer += i;
+            }
+        }
+        return answer;
+    }
 }
