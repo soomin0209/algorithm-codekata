@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Lv2Solution {
 
     // 11. 짝수와 홀수
@@ -59,6 +62,22 @@ public class Lv2Solution {
         for (int i = 0; i < n; i++) {
             answer[i] = (i + 1) * (long)x;
         }
+        return answer;
+    }
+
+    // 17. 자연수 뒤집어 배열로 만들기
+    public int[] solution(long n) {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; n != 0; i++) {
+            list.add((int)(n % 10));
+            n /= 10;
+        }
+
+        int[] answer = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            answer[i] = list.get(i);
+        }
+
         return answer;
     }
 }
