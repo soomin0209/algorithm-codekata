@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Lv2Solution {
@@ -95,5 +97,15 @@ public class Lv2Solution {
             }
         }
         return -1;
+    }
+
+    // 20. 정수 내림차순으로 배치하기
+    public long solution20(long n) {
+        String str = Long.toString(n);
+        String[] arr = str.split("");
+        Arrays.sort(arr, Collections.reverseOrder());
+        String joinedArr = String.join("", arr);
+        long answer = Long.parseLong(joinedArr);
+        return answer;
     }
 }
