@@ -278,4 +278,29 @@ public class Lv2Solution {
         int answer = 45 - sum;
         return answer;
     }
+
+    // 29. 제일 작은 수 제거하기
+    public int[] solution29(int[] arr) {
+        if (arr.length == 1) {
+            int[] answer = {-1};
+            return answer;
+        }
+
+        int min = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+
+        int[] answer = new int[arr.length - 1];
+        int j = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != min) {
+                answer[j] = arr[i];
+                j++;
+            }
+        }
+        return answer;
+    }
 }
