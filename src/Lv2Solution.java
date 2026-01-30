@@ -261,4 +261,11 @@ public class Lv2Solution {
         }
         return answer;
     }
+
+    // 27. 핸드폰 번호 가리기
+    public String solution27(String phone_number) {
+        int length = phone_number.length();
+        String answer = "*".repeat(length - 4) + phone_number.substring(length - 4);
+        return answer;
+    }
 }
