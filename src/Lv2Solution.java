@@ -248,4 +248,17 @@ public class Lv2Solution {
 
         return answer;
     }
+
+    // 26. 음양 더하기
+    public int solution26(int[] absolutes, boolean[] signs) {
+        int answer = 0;
+        for (int i = 0; i < absolutes.length; i++) {
+            if (signs[i] == true) {
+                answer += absolutes[0];
+            } else {
+                answer -= absolutes[0];
+            }
+        }
+        return answer;
+    }
 }
