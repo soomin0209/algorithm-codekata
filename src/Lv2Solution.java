@@ -337,4 +337,37 @@ public class Lv2Solution {
         }
         return answer;
     }
+
+    // 33. 약수의 개수와 덧셈
+    public int solution33(int left, int right) {
+        int answer = 0;
+        for (int i = left; i <= right; i++) {
+            int count = 0;
+            for (int j = 1; j <= i; j++) {
+                if (i % j == 0) {
+                    count++;
+                }
+            }
+            if (count % 2 == 0) {
+                answer += i;
+            } else {
+                answer -= i;
+            }
+        }
+        return answer;
+    }
+
+    // 33. 약수의 개수와 덧셈 (개선)
+    // 약수의 개수가 홀수인 수는 완전제곱수 밖에 없음
+    public int solution33Develop(int left, int right) {
+        int answer = 0;
+        for (int i = left; i <= right; i++) {
+            if ((int)Math.sqrt(i) * (int)Math.sqrt(i) == i) {
+                answer -= i;
+            } else {
+                answer += i;
+            }
+        }
+        return answer;
+    }
 }
