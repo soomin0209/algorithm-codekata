@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Lv2Solution {
 
@@ -421,5 +418,19 @@ public class Lv2Solution {
             }
         }
         return answer;
+    }
+
+    // 38. 직사각형 별찍기
+    public void solutioin38() {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        for (int i = 1; i <= b; i++) {
+            for (int j = 1; j <= a; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
 }
