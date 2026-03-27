@@ -70,4 +70,20 @@ public class Lv3Solution {
         int answer = width * height;
         return answer;
     }
+
+    // 45. 시저 암호
+    public String solution45(String s, int n) {
+        String answer = "";
+
+        for (char c : s.toCharArray()) {
+            if (c >= 'A' && c <= 'Z') {
+                c = (char) ('A' + ((c - 'A' + n) % 26));
+            } else if (c >= 'a' && c <= 'z') {
+                c = (char) ('a' + ((c - 'a' + n) % 26));
+            }
+            answer += c;
+        }
+
+        return answer;
+    }
 }
