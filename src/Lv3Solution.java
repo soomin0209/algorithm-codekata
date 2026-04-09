@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class Lv3Solution {
 
     // 41. 이상한 문자 만들기
@@ -98,5 +101,50 @@ public class Lv3Solution {
         }
 
         return Integer.parseInt(s);
+    }
+
+    // 46. 문자열 내 마음대로 정렬하기
+    public String[] solution46(String[] strings, int n) {
+        Arrays.sort(strings);
+        Arrays.sort(strings, new Comparator<String>(){
+
+            @Override
+            public int compare(String s1, String s2) {
+                if (s1.charAt(n) > s2.charAt(n)) {
+                    return 1;
+                } else if (s1.charAt(n) < s2.charAt(n)) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            }
+        });
+
+        return strings;
+    }
+
+    // 46. 문자열 내 마음대로 정렬하기 (개선1)
+    public String[] solution46Develop(String[] strings, int n) {
+        Arrays.sort(strings, new Comparator<String>() {
+            @Override
+            public int compare(String s1, String s2) {
+                if (s1.charAt(n) == s2.charAt(n)) {
+                    return s1.compareTo(s2); // 사전순 정렬
+                }
+                return s1.charAt(n) - s2.charAt(n);
+            }
+        });
+        return strings;
+    }
+
+    // 46. 문자열 내 마음대로 정렬하기 (개선2)
+    public String[] solution46Develop2(String[] strings, int n) {
+        Arrays.sort(strings, (s1, s2) -> {
+            if (s1.charAt(n) == s2.charAt(n)) {
+                return s1.compareTo(s2);
+            }
+            return s1.charAt(n) - s2.charAt(n);
+        });
+        return strings;
     }
 }
