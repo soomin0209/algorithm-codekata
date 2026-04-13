@@ -103,7 +103,7 @@ public class Lv3Solution {
         return Integer.parseInt(s);
     }
 
-    // 46. 문자열 내 마음대로 정렬하기
+    // 47. 문자열 내 마음대로 정렬하기
     public String[] solution46(String[] strings, int n) {
         Arrays.sort(strings);
         Arrays.sort(strings, new Comparator<String>(){
@@ -123,7 +123,7 @@ public class Lv3Solution {
         return strings;
     }
 
-    // 46. 문자열 내 마음대로 정렬하기 (개선1)
+    // 47. 문자열 내 마음대로 정렬하기 (개선1)
     public String[] solution46Develop(String[] strings, int n) {
         Arrays.sort(strings, new Comparator<String>() {
             @Override
@@ -137,7 +137,7 @@ public class Lv3Solution {
         return strings;
     }
 
-    // 46. 문자열 내 마음대로 정렬하기 (개선2)
+    // 47. 문자열 내 마음대로 정렬하기 (개선2)
     public String[] solution46Develop2(String[] strings, int n) {
         Arrays.sort(strings, (s1, s2) -> {
             if (s1.charAt(n) == s2.charAt(n)) {
@@ -146,5 +146,18 @@ public class Lv3Solution {
             return s1.charAt(n) - s2.charAt(n);
         });
         return strings;
+    }
+
+    // 48. K번째수
+    public int[] solution48(int[] array, int[][] commands) {
+        int[] answer = new int[commands.length];
+
+        for (int i = 0; i < commands.length; i++) {
+            int[] subArray = Arrays.copyOfRange(array, commands[i][0] - 1, commands[i][1]);
+            Arrays.sort(subArray);
+            answer[i] = subArray[commands[i][2] - 1];
+        }
+
+        return answer;
     }
 }
