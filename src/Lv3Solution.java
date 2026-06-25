@@ -164,7 +164,7 @@ public class Lv3Solution {
     }
 
     // 49. 두 개 뽑아서 더하기
-    public int[] solution(int[] numbers) {
+    public int[] solution49(int[] numbers) {
 
         List<Integer> list = new ArrayList<>();
 
@@ -178,5 +178,22 @@ public class Lv3Solution {
         }
 
         return list.stream().sorted().mapToInt(i -> i).toArray();
+    }
+
+    // 50. 가장 가까운 같은 글자
+    public int[] solution50(String s) {
+        String[] arr = s.split("");
+        int[] answer = new int[s.length()];
+
+        for (int i = 0; i < s.length(); i++) {
+            int num = -1;
+            for (int j = 0; j < i; j++) {
+                if (arr[i].equals(arr[j])) {
+                    num = i - j;
+                }
+            }
+            answer[i] = num;
+        }
+        return answer;
     }
 }
