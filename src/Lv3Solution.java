@@ -196,4 +196,27 @@ public class Lv3Solution {
         }
         return answer;
     }
+
+    // 51. 푸드 파이트 대회
+    public String solution51(int[] food) {
+        String answer = "";
+
+        for (int i = 1; i < food.length; i++) {
+            int num = food[i] / 2;
+            for (int j = 0; j < num; j++) {
+                answer += i;
+            }
+        }
+
+        answer = answer + "0";
+
+        for (int i = food.length - 1; i > 0; i--) {
+            int num = food[i] / 2;
+            for (int j = 0; j < num; j++) {
+                answer += i;
+            }
+        }
+
+        return answer;
+    }
 }
